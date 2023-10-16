@@ -2,7 +2,9 @@ package com.example.intentmyapplication
 
 import android.os.Parcel
 import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Person(
     val name: String?,
     val age: Int?,
@@ -19,24 +21,24 @@ data class Person(
     ) {
     }
 
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(name)
-        parcel.writeValue(age)
-        parcel.writeString(email)
-        parcel.writeString(city)
-    }
+//    override fun writeToParcel(parcel: Parcel, flags: Int) {
+//        parcel.writeString(name)
+//        parcel.writeValue(age)
+//        parcel.writeString(email)
+//        parcel.writeString(city)
+//    }
 
-    override fun describeContents(): Int {
-        return 0
-    }
+//    override fun describeContents(): Int {
+//        return 0
+//    }
 
-    companion object CREATOR : Parcelable.Creator<Person> {
-        override fun createFromParcel(parcel: Parcel): Person {
-            return Person(parcel)
-        }
-
-        override fun newArray(size: Int): Array<Person?> {
-            return arrayOfNulls(size)
-        }
-    }
+//    companion object CREATOR : Parcelable.Creator<Person> {
+//        override fun createFromParcel(parcel: Parcel): Person {
+//            return Person(parcel)
+//        }
+//
+//        override fun newArray(size: Int): Array<Person?> {
+//            return arrayOfNulls(size)
+//        }
+//    }
 }
